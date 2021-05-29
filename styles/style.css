@@ -50,7 +50,6 @@ body {
 .primary-button {
     position: relative;
     left: 3em;
-
     color: #FFF;
     background-color: #33C3F0;
     border-color: #33C3F0;
@@ -60,7 +59,20 @@ body {
     
 }
 
+.book-container {
+    display: flex;
+    margin: 2em auto;
+    flex-wrap: wrap;
+}
 
+.books {
+    width: 33%;
+    height: 230px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgba(24, 77, 104, 0.8) 0%, rgba(87, 202, 133, 0.8) 100%);
+    color: white;
+}
 
 img {
     width: 100px;
