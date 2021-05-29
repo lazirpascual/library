@@ -1,3 +1,6 @@
+let myLibrary = [];
+
+// constructor for the Book object
 function Book (title, author, pages, isRead) {
     this.title = title;
     this.author = author;
@@ -6,9 +9,15 @@ function Book (title, author, pages, isRead) {
 
 }
 
-Book.prototype.info = function() {
-    return this.title + " by " + this.author + ", " + this.pages + " pages, " + this.isRead;
+// function that creates book objects and stores it in the myLibrary array
+function addBookToLibrary (title, author, pages, isRead) {
+    let newBook = new Book(title, author, pages, isRead);
+    myLibrary.push(newBook);
 }
 
-const bookOne = new Book("Name of the Wind", "Patrick Rothfus", 491, "not read yet");
-console.log(bookOne.info());
+// Book.prototype.info = function() {
+//     return this.title + " by " + this.author + ", " + this.pages + " pages, " + this.isRead;
+// }
+
+// addBookToLibrary("IT", "Stephen", 500, "read");
+// addBookToLibrary("Lost", "Mark", 550, "not read");
