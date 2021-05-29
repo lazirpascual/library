@@ -2,11 +2,39 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>practice</title>
+        <title>My Library</title>
         <link href="styles/style.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
     </head>
     <body>
+        <section class="main-container">
+            <header class="header">
+                <img src="images/books.png" alt="A picture of books">
+                <h2>My Library</h2>
+            </header>
+            <form class="user-input">
+                <ul class="input-property">
+                    <p>Book</p>
+                    <input type="text" class="input-text"> 
+                </ul>
+                <ul class="input-property">
+                    <p>Author</p>
+                    <input type="text" class="input-text"> 
+                </ul>
+                <ul class="input-property">
+                    <p>Number of Pages</p>
+                    <input type="text" class="input-text"> 
+                </ul>
+                <ul class="input-property"> 
+                    <p>Status</p>
+                    <select name="status" class="input-text">
+                        <option value="read">Read</option>
+                        <option value="unread">Not Read</option>
+                    </select>
+                </ul>
+                <input type="submit" class="primary-button">
+            </form>
+            <div class="books"></div>
+        </section>
 
     <script src="scripts/main.js"></script>
     </body>
