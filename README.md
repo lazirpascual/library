@@ -11,6 +11,7 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/paths/full-s
 ### Features
 
 * Create a book that is saved to localStorage
+* Read information about the book
 * Delete any book
 * Update the read/undread status of any book
 
