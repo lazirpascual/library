@@ -60,6 +60,12 @@ body {
     height: 40px;
 }
 
+.delete-button {
+    height: 40px;
+    background-color: lightpink;
+    border-radius: 5px;
+}
+
 .book-container {
     display: flex;
     margin: 1em auto;
