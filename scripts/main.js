@@ -33,6 +33,7 @@ function addBookToPage() {
 
         /* create data attribute that saves index of current book so we can delete it later */
         deleteBtn.setAttribute('data-index', myLibrary.indexOf(book));
+        deleteBtn.setAttribute('id', myLibrary.indexOf(book));
 
         singleBook.appendChild(deleteBtn);
         bookContainer.appendChild(singleBook);
@@ -59,14 +60,17 @@ addBookBtn.addEventListener('click', function () {
     let pages = document.getElementById("pages").value;
     addBookToLibrary(title, author, pages, "read");
     removeAllBooks(bookContainer);  // remove all books in the node
-    addBookToPage();  // re-display all books
+    addBookToPage();                // re-display all books
 });
 
 // delete book on button click
 bookContainer.addEventListener('click', function(e) {
     let bookToDelete = e.target.getAttribute('data-index');
-    removeBookInArray(bookToDelete);    // remove the book we want to delete in the array
-    removeAllBooks(bookContainer);      // remove all books in the node
-    addBookToPage();    // re-display all books
+    /* delete book only if we are clicking the 'delete button' */
+    if (e.target.classList == 'delete-button') {  
+        removeBookInArray(bookToDelete);          // remove the book we want to delete in the array
+        removeAllBooks(bookContainer);            // remove all books in the node
+        addBookToPage();                          // re-display all books
+    }
 });
 
