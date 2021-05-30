@@ -15,7 +15,6 @@ body {
     margin-left: auto;
     padding: 1.5rem 0;
     text-align: center;
-    
 }
 
 .header {
@@ -27,10 +26,11 @@ body {
 .user-input {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 97%;
     height: 200px;
     background-color: rgb(221, 232, 238);
     border-radius: 10px;
+    margin-bottom: 2em;
 }
 
 .input-property {
@@ -39,7 +39,8 @@ body {
 }
 
 .input-text {
-    height: 38px;
+    width: 85%;
+    height: 33%;
     padding: 6px 10px;
     background-color: #fff;
     border: 1px solid #D1D1D1;
@@ -50,26 +51,26 @@ body {
 
 .primary-button {
     position:relative;
-    right: 35em;
-    bottom: 4.5em;
+    left: 3em;
+    bottom: 0.5em;
     color: #FFF;
     background-color: #33C3F0;
     border-color: #33C3F0;
     border-radius: 5px;
-    width: 120px;
-    height: 40px;
+    width: 10%;
+    height: 35px;
 }
 
 .delete-button {
     height: 40px;
-    width: 80px;
+    width: 30%;
     background-color: lightpink;
     border-radius: 5px;
 }
 
 .status-button {
     height: 40px;
-    width: 80px;
+    width: 30%;
     margin-top: 3em;
     background-color: rgb(224, 218, 218);
     border-radius: 5px;
@@ -78,20 +79,21 @@ body {
 
 .book-container {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .books {
     display: inline;
-    width: 30%;
+    width: 24%;
     height: 150px;
     position: relative;
-    left: -1em;
+    right: 0.5em;
     border: 1px solid black;
     border-radius: 5px;
     background: linear-gradient(135deg, rgba(24, 77, 104, 0.8) 0%, rgba(87, 202, 133, 0.8) 100%);
     color: white;
-    margin: 1em;
+    margin: 0.5em;
     text-align: left;
     padding: 2em;
     font-size: 20px;
@@ -100,15 +102,15 @@ body {
 
 .books-unread {
     display: inline;
-    width: 30%;
+    width: 24%;
     height: 150px;
     position: relative;
-    left: -1em;
+    right: 0.5em;
     border: 1px solid black;
     border-radius: 5px;
     background: linear-gradient(135deg, rgba(167, 180, 187, 0.8) 0%, rgba(62, 65, 65, 0.8) 100%);
     color: rgb(0, 0, 0);
-    margin: 1em;
+    margin: 0.5em;
     text-align: left;
     padding: 2em;
     font-size: 20px;
