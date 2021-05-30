@@ -14,15 +14,15 @@
             <form class="user-input">
                 <ul class="input-property">
                     <p>Book</p>
-                    <input type="text" class="input-text"> 
+                    <input type="text" class="input-text" id="title"> 
                 </ul>
                 <ul class="input-property">
                     <p>Author</p>
-                    <input type="text" class="input-text"> 
+                    <input type="text" class="input-text" id="author"> 
                 </ul>
                 <ul class="input-property">
                     <p>Number of Pages</p>
-                    <input type="text" class="input-text"> 
+                    <input type="text" class="input-text" id="pages"> 
                 </ul>
                 <ul class="input-property"> 
                     <p>Status</p>
@@ -31,13 +31,10 @@
                         <option value="unread">Not Read</option>
                     </select>
                 </ul>
-                <input type="submit" class="primary-button">
             </form>
-            <div class="book-container">
-                <div class="books"></div>
-            </div>
+            <input id="submit-book" type="submit" class="primary-button">
+            <div id="book-location" class="book-container"></div>
         </section>
-
     <script src="scripts/main.js"></script>
     </body>
 </html>
