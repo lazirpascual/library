@@ -19,6 +19,7 @@ body {
 
 .header {
     display: flex;
+    justify-content: center;
     width: 100%;
     margin: 2em;
 }
@@ -77,6 +78,20 @@ body {
     margin-right: 1em;
 }
 
+.primary-button:hover {
+    background-color: #4393a7;
+    box-shadow: 3px 3px 1px;
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
+.delete-button:hover, .status-button:hover {
+    background-color: #aaa7a5;
+    box-shadow: 3px 3px 1px;
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
 .book-container {
     display: flex;
     justify-content: flex-start;
@@ -119,6 +134,7 @@ body {
 
 img {
     width: 100px;
+    margin-right: 2em;
 }
 
 

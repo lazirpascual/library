@@ -41,7 +41,9 @@ function addBooksToPage() {
 
         singleBook.appendChild(statusBtn); // add status button to book
         singleBook.appendChild(deleteBtn); // add delete button to book
-        bookContainer.appendChild(singleBook);
+        bookContainer.appendChild(singleBook); // add book to the container
+
+        console.log(localStorage);
     });
 }
 
@@ -69,9 +71,16 @@ addBookBtn.addEventListener('click', function () {
     let author = document.getElementById("author").value;
     let pages = document.getElementById("pages").value;
     let status = document.getElementById("status-input").value;
-    addBookToLibrary(title, author, pages, status);
-    removeAllBooks(bookContainer);   // remove all books in the node
-    addBooksToPage();                // re-display all books
+
+    if (title && author && pages && status) {
+        addBookToLibrary(title, author, pages, status);
+        myLibrary.reverse();
+        removeAllBooks(bookContainer);   // remove all books in the node
+        addBooksToPage();                // re-display all books
+    }
+    else {
+        alert("Must provide an input for all fields!");
+    }
 });
 
 // delete book on button click
