@@ -28,4 +28,4 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/paths/full-s
 * Git and GitHub
 
 ### What I Learned 
-
+In this project, I learned how to organize my code through the use of objects and the ability to create them using constructors. Furthermore, I greatly enhanced my DOM manipulation skills by creating my very first CRUD application through the use of vanilla Javascript. I learned various techniques required to create, read, update, and delete different elements and attributes using DOM.
