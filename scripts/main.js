@@ -27,10 +27,16 @@ function setLocalLibrary() {
 function addBooksToPage(libraryToDisplay) {
     libraryToDisplay.forEach(function (book) {
         const singleBook = document.createElement('div');
+
+        const bookTitle = document.createElement('p');
+        bookTitle.classList.add('book-title');
+        bookTitle.textContent =  book.title + "\r\n";
+
+        const bookContent = document.createElement('p');
         singleBook.setAttribute('style', 'white-space: pre;');
-        singleBook.textContent =  book.title + "\r\n";
-        singleBook.textContent += "By: " + book.author + "\r\n";
-        singleBook.textContent += "Number of pages: " +book.pages + "\r\n";
+        bookContent.textContent += "By: " + book.author + "\r\n";
+        bookContent.textContent += "Number of pages: " +book.pages + "\r\n";
+        bookContent.classList.add('book-content');
         singleBook.classList.add((book.isRead == 'Read' ? 'books' : 'books-unread'));
 
         /* add delete button */
@@ -47,6 +53,8 @@ function addBooksToPage(libraryToDisplay) {
         deleteBtn.setAttribute('data-index', libraryToDisplay.indexOf(book));
         statusBtn.setAttribute('data-status', libraryToDisplay.indexOf(book));
 
+        singleBook.appendChild(bookTitle)
+        singleBook.appendChild(bookContent)
         singleBook.appendChild(statusBtn); // add status button to book
         singleBook.appendChild(deleteBtn); // add delete button to book
         bookContainer.appendChild(singleBook); // add book to the container

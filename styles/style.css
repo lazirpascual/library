@@ -67,6 +67,8 @@ body {
     width: 30%;
     background-color: lightpink;
     border-radius: 5px;
+    position: relative;
+    bottom: 4em;
 }
 
 .status-button {
@@ -76,6 +78,8 @@ body {
     background-color: rgb(224, 218, 218);
     border-radius: 5px;
     margin-right: 1em;
+    position: relative;
+    bottom: 4em;
 }
 
 .primary-button:hover {
@@ -112,7 +116,7 @@ body {
     text-align: left;
     padding: 2em;
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1;
 }
 
 .books-unread {
@@ -129,7 +133,18 @@ body {
     text-align: left;
     padding: 2em;
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1;
+}
+
+.book-title {
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    bottom: 1.5em;
+}
+.book-content {
+    position: relative;
+    bottom: 2em;
 }
 
 img {
