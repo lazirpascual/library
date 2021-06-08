@@ -9,15 +9,23 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
+myLibrary = JSON.parse(localStorage.getItem('books')) || [];
+addBooksToPage(myLibrary);
+
 // function that creates book objects and stores it in the myLibrary array
 function addBookToLibrary(title, author, pages, isRead) {
     let newBook = new Book(title, author, pages, isRead);
     myLibrary.push(newBook);
 }
 
+// add libary to localStorage
+function setLocalLibrary() {
+    localStorage.setItem('books', JSON.stringify(myLibrary));
+}
+
 // display all current books
-function addBooksToPage() {
-    myLibrary.forEach(function (book) {
+function addBooksToPage(libraryToDisplay) {
+    libraryToDisplay.forEach(function (book) {
         const singleBook = document.createElement('div');
         singleBook.setAttribute('style', 'white-space: pre;');
         singleBook.textContent =  book.title + "\r\n";
@@ -36,14 +44,12 @@ function addBooksToPage() {
         statusBtn.classList.add('status-button');
 
         /* create data attributes that saves index of current book so we can delete and update it later */
-        deleteBtn.setAttribute('data-index', myLibrary.indexOf(book));
-        statusBtn.setAttribute('data-status', myLibrary.indexOf(book));
+        deleteBtn.setAttribute('data-index', libraryToDisplay.indexOf(book));
+        statusBtn.setAttribute('data-status', libraryToDisplay.indexOf(book));
 
         singleBook.appendChild(statusBtn); // add status button to book
         singleBook.appendChild(deleteBtn); // add delete button to book
         bookContainer.appendChild(singleBook); // add book to the container
-
-        console.log(localStorage);
     });
 }
 
@@ -74,11 +80,11 @@ addBookBtn.addEventListener('click', function () {
 
     if (title && author && pages && status) {
         addBookToLibrary(title, author, pages, status);
-        myLibrary.reverse();
+        myLibrary.reverse();             // reverse array to add book to start instead of end
+        setLocalLibrary()                // set local storage to updated libary
         removeAllBooks(bookContainer);   // remove all books in the node
-        addBooksToPage();                // re-display all books
-    }
-    else {
+        addBooksToPage(myLibrary);       // re-display all books
+    } else {
         alert("Must provide an input for all fields!");
     }
 });
@@ -89,8 +95,9 @@ bookContainer.addEventListener('click', function(e) {
     /* delete book only if we are clicking the 'delete button' */
     if (e.target.classList == 'delete-button') {  
         removeBookInArray(bookToDelete);          // remove the book we want to delete in the array
+        setLocalLibrary()                         // set local storage to updated libary
         removeAllBooks(bookContainer);            // remove all books in the node
-        addBooksToPage();                         // re-display all books
+        addBooksToPage(myLibrary);                // re-display all books
     }
 });
 
@@ -99,8 +106,9 @@ bookContainer.addEventListener('click', function(e) {
     let bookToUpdate = e.target.getAttribute('data-status');
     if (e.target.classList == 'status-button') {  
         toggleStatus(bookToUpdate);
+        setLocalLibrary()                         // set local storage to updated libary
         removeAllBooks(bookContainer);            // remove all books in the node
-        addBooksToPage();                         // re-display all books
+        addBooksToPage(myLibrary);                // re-display all books
     }
 });
 
